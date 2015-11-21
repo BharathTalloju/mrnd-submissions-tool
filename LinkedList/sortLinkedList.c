@@ -24,35 +24,28 @@ struct node * sortLinkedList(struct node *head) {
 }
 
 void bubbleSort_LinkedList(struct node* head){
-	typedef struct walker{
-		int position;
-		struct node* link_to_node;
-	}WALKER;
-	WALKER walker1,walker2;
-	int wall;
+	int wall = 1,current_position = 1;
 	int temp;
+	int flag;
+	struct node *walker = head ;
 	
-	walker1.position = 1;
-	walker2.position = 1;
-	for(walker1.link_to_node = head ; walker2.link_to_node != NULL ; walker1.link_to_node = (walker2.link_to_node)->next , walker1.position = walker2.position + 1){
-		wall = walker1.position;
-		
-		walker2.link_to_node = (walker1.link_to_node)->next;
-		(walker2.position) = (walker1.position) + 1;
-		
-		if(walker2.link_to_node != NULL){
-			wall = walker2.position;
-			
-			if((walker2.link_to_node)->num  <  (walker1.link_to_node)->num){	//if a[i+1] < a[i] 
-			//swapping a[i] and a[i+1] 
-				temp = (walker1.link_to_node)->num;
-				(walker1.link_to_node)->num = (walker2.link_to_node)->num;
-				(walker2.link_to_node)->num = temp;
+	for(	; walker->next != NULL ; walker = walker->next){
+		//first pass to calculate the length of the list
+		if((walker->num) > ((walker-next)->num)){		//a[i] > a[i+1]
+			//swapping a[i] and a[i+1]
+			temp = walker->num;
+			walker->num = (walker->next)->num;
+			(walker->next)->num = temp;
+		}
+		wall++;
+	}
+	for(current_position = 1; current_position < wall ; wall--){
+		for(walker = head ; current_position < wall ; walker = walker->next,current_position++){
+			if(walker->num > (walker->next)->num){
+				temp = walker->num;
+				walker->num = (walker->next)->num;
+				(walker->next)->num = temp;
 			}
 		}
-		else{
-			break;
-		}
-		
 	}
 }
