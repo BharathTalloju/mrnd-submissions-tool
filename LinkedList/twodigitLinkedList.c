@@ -22,5 +22,19 @@ struct node {
 };
 
 int convert_sll_2digit_to_int(struct node *head){
-	return 0;
+	int number = 0;
+	
+	for( ; head != NULL ; head = head->next){
+		number = number*10 + head->digit1;
+		number = number*10 + head->digit2;
+	}
+	return number;
+}
+
+//							END
+
+//Test Driver
+
+int main(){
+	
 }

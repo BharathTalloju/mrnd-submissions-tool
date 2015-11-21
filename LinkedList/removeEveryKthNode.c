@@ -119,7 +119,7 @@ int main(){
 	}
 	head = temp;
 	printf("\n");
-	removeEveryKthNode(head,2);
+	removeEveryKthNode(head,3);
 	
 	while(head != NULL){
 		printf("%d ,",head->data);
