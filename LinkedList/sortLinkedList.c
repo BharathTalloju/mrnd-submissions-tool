@@ -30,7 +30,29 @@ void bubbleSort_LinkedList(struct node* head){
 	}WALKER;
 	WALKER walker1,walker2;
 	int wall;
+	int temp;
 	
 	walker1.position = 1;
-	walker2.position = 2;
+	walker2.position = 1;
+	for(walker1.link_to_node = head ; walker2.link_to_node != NULL ; walker1.link_to_node = (walker2.link_to_node)->next , walker1.position = walker2.position + 1){
+		wall = walker1.position;
+		
+		walker2.link_to_node = (walker1.link_to_node)->next;
+		(walker2.position) = (walker1.position) + 1;
+		
+		if(walker2.link_to_node != NULL){
+			wall = walker2.position;
+			
+			if((walker2.link_to_node)->num  <  (walker1.link_to_node)->num){	//if a[i+1] < a[i] 
+			//swapping a[i] and a[i+1] 
+				temp = (walker1.link_to_node)->num;
+				(walker1.link_to_node)->num = (walker2.link_to_node)->num;
+				(walker2.link_to_node)->num = temp;
+			}
+		}
+		else{
+			break;
+		}
+		
+	}
 }
