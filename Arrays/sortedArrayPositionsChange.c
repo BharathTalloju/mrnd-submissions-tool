@@ -14,6 +14,7 @@ NOTES:
 #include <stdio.h>
 
 void * sortedArrayPositionsChange(int *Arr, int len)
-{
+{	//Pass pointers from the either ends of the array
+	
 	return NULL;
 }
