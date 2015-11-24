@@ -14,7 +14,24 @@ NOTES:
 #include <stdio.h>
 
 void * sortedArrayPositionsChange(int *Arr, int len)
-{	//Pass pointers from the either ends of the array
+{	
+	int i = 0, j = len - 1;
+	int temp;
 	
+	if(Arr & len){
+		while(Arr[i] < Arr[i+1]){
+			i++;
+		}
+	
+		while(Arr[j] > Arr[i]){
+			j--;
+		}
+	
+		temp = Arr[i];
+		Arr[i] = Arr[j];
+		Arr[j] = temp;
+		
+		return Arr;
+	}
 	return NULL;
 }
