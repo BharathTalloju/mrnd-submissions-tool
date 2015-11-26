@@ -18,7 +18,7 @@ NOTES:
 void * studentsCount(int *Arr, int len, int score, int *lessCount, int *moreCount) {
 	int i = 0, j = len - 1;
 	
-	if((score > Arr[len]) || (score < Arr[]){
+	if((score > Arr[j]) || (score < Arr[0])){
 		//Error
 		return NULL;
 	}
@@ -36,5 +36,19 @@ void * studentsCount(int *Arr, int len, int score, int *lessCount, int *moreCoun
 	}
 	*moreCount = len - i;
 	
-	return Arr;
+	return 1;
+}
+
+//Test Driver
+
+int main(){
+	int Arr[] = {10,20,20,30,30,35,36,40,50,50,50,50,60,61,61,70};
+	int len = 16;
+	int score = 40;
+	int lessCount = 0,moreCount = 0;
+	
+	if(studentsCount(Arr,len,score,&lessCount,&moreCount))
+		printf("lesscount  =  %d ;   moreCount = %d\n",lessCount,moreCount);
+	else
+		fprintf(stderr,"Ha");
 }
