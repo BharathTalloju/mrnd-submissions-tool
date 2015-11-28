@@ -20,6 +20,11 @@ int * sortedArrayInsertNumber(int *Arr, int len, int num)
 	int *result_array = NULL;
 	int i = 0;
 	
+	//ERROR CASES
+	if((!Arr) || (len < 0)){
+		return NULL;
+	}
+	
 	if(len > 0){
 		result_array = (int*)calloc((len+1),sizeof(int));
 		

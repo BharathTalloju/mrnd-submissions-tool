@@ -21,10 +21,22 @@ struct student {
 };
 
 void * scoresDescendingSort(struct student *students, int len) {
+	//Error CASES
+	if(!students){
+		return NULL;
+	}
+	if(len <= 0){
+		return NULL;
+	}
 	
-	quicksort_students(students,0,len-1);
+	if(len == 1){
+		//Do nothing
+	}
+	else{
+		quicksort_students(students,0,len-1);
+	}
 	
-	return NULL;
+	return students;
 }
 
 int quicksort_students(struct student *students, int first , int last){

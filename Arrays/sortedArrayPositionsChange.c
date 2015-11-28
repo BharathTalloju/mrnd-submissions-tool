@@ -18,6 +18,11 @@ void * sortedArrayPositionsChange(int *Arr, int len)
 	int i = 0, j = len - 1;
 	int temp;
 	
+	//ERROR CASES
+	if(len < 0){
+		return NULL;
+	}
+	
 	if(Arr & len){
 		while(Arr[i] < Arr[i+1]){
 			i++;
@@ -26,10 +31,11 @@ void * sortedArrayPositionsChange(int *Arr, int len)
 		while(Arr[j] > Arr[i]){
 			j--;
 		}
-	
-		temp = Arr[i];
-		Arr[i] = Arr[j];
-		Arr[j] = temp;
+		if(i < j){
+			temp = Arr[i];
+			Arr[i] = Arr[j];
+			Arr[j] = temp;
+		}
 		
 		return Arr;
 	}

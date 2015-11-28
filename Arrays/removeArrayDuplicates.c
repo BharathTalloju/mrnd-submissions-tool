@@ -21,6 +21,12 @@ void * removeArrayDuplicates(int *Arr, int len)
 	int i;
 	int repeats;
 	
+	if(!Arr){
+		return NULL;
+	}
+	if(len <= 0){
+		return NULL;
+	}
 	quicksort(Arr,0,len-1);
 		
 	for(i = 0 ; i < len ;  ){

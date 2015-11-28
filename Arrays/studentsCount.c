@@ -17,7 +17,10 @@ NOTES:
 
 void * studentsCount(int *Arr, int len, int score, int *lessCount, int *moreCount) {
 	int i = 0, j = len - 1;
-	
+	//ERROR CASES
+	if((!Arr) || (len <= 0)){
+		return NULL;
+	}
 	if((score > Arr[j]) || (score < Arr[0])){
 		//Error
 		return NULL;
