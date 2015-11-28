@@ -33,10 +33,10 @@ int quicksort_students(struct student *students, int first , int last){
 	
 	if(first < last){
 		while(left < right){
-			while((students[left]).score <= pivot){
+			while((students[left]).score >= pivot){
 				left++;
 			}
-			while((students[right]).score > pivot){
+			while((students[right]).score < pivot){
 				right--;
 			}
 			if(left < right){

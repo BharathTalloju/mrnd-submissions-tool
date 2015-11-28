@@ -22,5 +22,41 @@ struct student {
 };
 
 struct student ** topKStudents(struct student *students, int len, int K) {
-	return NULL;
+	
+	if(K <= 0){
+		return NULL;
+	}
+	
+	if(K > len){
+		return NULL;
+	}
+
+	quicksort_students(students,0,len - 1);
+	
+	return (students + (len - K));
+	
+	
+}
+
+int quicksort_students(struct student *students, int first , int last){
+	int left = first + 1, right = last ;
+	int pivot = (students[first]).score;
+	
+	if(first < last){
+		while(left < right){
+			while((students[left]).score <= pivot){
+				left++;
+			}
+			while((students[right]).score > pivot){
+				right--;
+			}
+			if(left < right){
+				swap(students,left,right);
+			}
+		}
+		
+		swap(students,first,right);
+		quicksort_students(students,first,right - 1);
+		quicksort_students(students,right + 1,last);
+	}
 }
