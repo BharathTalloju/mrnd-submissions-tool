@@ -12,5 +12,7 @@ NOTES:
 */
 
 char KthIndexFromEnd(char *str, int K) {
+	
+	if(!)
 	return '\0';
 }
