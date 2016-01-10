@@ -15,7 +15,7 @@ NOTES:
 #include <stdio.h>
 
 
-#define SIZE_OF_INT 64
+#define SIZE_OF_INT 32
 
 int findSingleOccurenceNumber(int *A, int len) {
     int i ;
