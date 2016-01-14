@@ -16,8 +16,50 @@ NOTES:
 struct node {
 	int num;
 	struct node *next;
-};
+}NODE;
 
 struct node * merge2LinkedLists(struct node *head1, struct node *head2) {
-	return NULL;
+    NODE* result = NULL;
+  NODE *temp;
+  
+  if(head1 == NULL){
+    return head2;
+  }
+  if(head2 == NULL){
+    return head1;
+  }
+  
+  if((head1-> value) <= (head2-> value)){
+    result = head1;
+    head1 = head1-> next;
+  }
+  else{
+    result = head2;
+    head2 = head2-> next;
+  }
+  temp = result;
+  while(head1 && head2){
+    if((head1-> value) <= (head2-> value)){
+      result-> next = head1;
+      result = head1;
+      head1 = head1-> next;
+    }
+    else{
+      result-> next = head2;
+      result = head2;
+      head2 = head2-> next;
+    }
+    
+    
+  }
+  result-> next = NULL;
+  if(head1){
+    result->next = head1;
+  }
+  if(head2){
+    result-> next = head2;
+  }
+  
+  return temp;
+  
 }

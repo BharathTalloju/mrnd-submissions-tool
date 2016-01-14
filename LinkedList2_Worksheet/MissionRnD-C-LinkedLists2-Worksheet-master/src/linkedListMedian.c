@@ -20,5 +20,40 @@ struct node {
 };
 
 int linkedListMedian(struct node *head) {
-	return -1;
+	NODE *walker_x = NULL;	//checks every node
+	NODE *walker_2x = NULL;	//checks every alternative node
+	
+	walker_x = head;
+	walker_2x = head;
+	
+	//																																while(head){
+	//																																	printf("%f -> ",head -> value);
+	//																																	head = head->next;
+	//																																}
+	
+	if(walker_x == NULL){
+		//List is empty
+		return 0;
+	}
+	
+	while(1){
+		walker_2x = walker_2x -> next;
+		if(walker_2x == NULL){
+			//Odd no. of nodes
+																																		//printf("\nreturnong %f\n",walker_x -> value);
+			return walker_x -> num;
+		}
+		
+		walker_2x = walker_2x -> next;
+		if(walker_2x == NULL){
+			//even no. of nodes
+			float median;
+			
+			median = ((walker_x -> num) + (walker_x -> next)->num ) / 2;
+																																			//printf("\nReturning %f",median);
+			return median;
+		}
+		
+		walker_x = walker_x -> next;
+	}
 }
