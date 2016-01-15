@@ -18,9 +18,15 @@ NOTES: Don't create new string , Dont return anything ,you have been given two p
 */
 
 #include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 
 void count_vowels_and_consonants(char *str,int *consonants, int *vowels){
+    int i;
+    
+}
 
-
+int is_consonant{
+    
 }

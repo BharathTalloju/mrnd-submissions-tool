@@ -10,9 +10,24 @@ ERROR CASES: Return '\0' for invalid inputs.
 
 NOTES:
 */
+#include <stdio.h>
+#include <stdlib.h>
 
 char KthIndexFromEnd(char *str, int K) {
-	
-	if(!)
-	return '\0';
+	int i = 0, j = K;
+    
+    
+	if(!str)
+	   return '\0';
+    while(str[j] != '\0'){
+        j++;
+        i++;
+    }
+    return str[i];
+}
+
+//Test Driver
+int main(){
+    char c = KthIndexFromEnd("123456",3);
+    printf("%c\n", c);
 }
