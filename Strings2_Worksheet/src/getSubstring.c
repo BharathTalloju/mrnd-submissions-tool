@@ -17,16 +17,17 @@ original String
 #include <stdio.h>
 #include <stdlib.h>
 
+int compareStrings(char *str1, char *str2);
+
 char * get_sub_string(char *str, int i, int j){
     char *result = NULL;
     int writer;
 
+//    printf("i  %d, j = %d\n" );
     if(str == NULL){
       return NULL;
     }
-    if(j<i){
-      return NULL;
-    }
+
     if(j < 0 || i<0 || j < i){
       return NULL;
     }
@@ -35,9 +36,38 @@ char * get_sub_string(char *str, int i, int j){
     for(writer = 0; i<=j ; i++, writer++){
       result[writer] = str[i];
       if(result[writer] == '\0'){
+//        printf("i,j = %d, %d, str = %s, Result = %s\n",i, j,str, result );
         return result;
       }
-    }
 
+    }
+    result[writer] = '\0';
+//    printf(" str = %s, Result = %s\n",str, result );
     return result;
+}
+//Test Driver
+int main(int argc, char const *argv[]) {
+  //Test 1
+  {
+    char str[] = "abcdefgh";
+    int i = 0;
+    int j = 2;
+    int k;
+
+    if(compareStrings(str+2, get_sub_string(str, 2,7))){
+      printf("Test1 Passed\n" );
+    }
+  return 0;
+  }
+}
+
+int compareStrings(char *str1, char *str2){
+  int i ;
+
+  for(i = 0 ; str1[i] != '\0' || str2[i] != '\0' ; i++ ){
+    if(str1[i] != str2[i]){
+      return 0;
+    }
+  }
+  return 1;
 }
