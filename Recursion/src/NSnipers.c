@@ -42,7 +42,10 @@ Read :How to access elements in 2D array when its first element address is passe
 P.S: The Above Problem is just a modified version of a popular BackTracking problem .
 */
 
-#include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 int solve_nsnipers(int *battlefield, int n){
+	
 	return 0;
 }
