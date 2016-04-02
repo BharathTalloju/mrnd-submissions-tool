@@ -116,10 +116,10 @@ void find_result_array(int *result_array, int rows, int cols, int start_row, int
 
 //Test Driver
 int main(int argc, char const *argv[]) {
-	int arr[3][4] = {{1,2,3,4}, {4,5,6,7}, {7, 8, 9,5}};
-	int * result_array = spiral(3, 4, arr);
+	int arr[4][4] = {{1,2,3,4}, {4,5,6,7}, {7, 8, 9,5}, {12,34,5,67}};
+	int * result_array = spiral(4, 4, arr);
 	int i;
-	for(i = 0; i < 12 ; i++){
+	for(i = 0; i < 16 ; i++){
 		printf("%d, ", result_array[i]);
 	}
 	return 0;

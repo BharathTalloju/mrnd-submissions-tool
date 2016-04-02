@@ -38,5 +38,8 @@ more parameters .
 
 int path_exists(int *maze, int rows, int columns, int x1, int y1, int x2, int y2)
 {
+	
 	return 1;
 }
+
+int does_path_exist(int *maze, int rows, int columns, int )
