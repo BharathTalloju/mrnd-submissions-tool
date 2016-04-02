@@ -18,7 +18,7 @@
 	Example Output : Returns 8
 
 	Note : Test Cases would be small <25.
-
+ 
 */
 #include <stdlib.h>
 #include <stdio.h>

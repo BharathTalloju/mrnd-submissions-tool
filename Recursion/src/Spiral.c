@@ -27,7 +27,7 @@ spiral(2,2,(int **)board); // Rows followed by columns followed by board
 Example Output : Return an array consisting of {4,6,7,8,3,1};
 
 Note : Check the function Parameters ,Its a double pointer .
-
+ 
 */
 
 
