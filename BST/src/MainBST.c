@@ -2,7 +2,7 @@
 This Project will seem to be little tougher than before ones .But It can be done very easily
 once you completed C-Recursion Project completely .
 
-Note : You can use the functions specified as wrapper functions ,and write new functions 
+Note : You can use the functions specified as wrapper functions ,and write new functions
 which might take more parameters .
 
 */
@@ -30,4 +30,6 @@ struct node *newNode(int key)
 int main(){
 
 	//Use it for testing ,Creating BST etc
+
+	printf("\nget_left_sum(NULL) = %d", get_left_sum(NULL));
 }
