@@ -34,12 +34,19 @@ more parameters .
 */
 
 #include<stdlib.h>
+#include <stdio.h>
 
+int max_rows = 0, max_col = 0;
 
 int path_exists(int *maze, int rows, int columns, int x1, int y1, int x2, int y2)
 {
 	
-	return 1;
+	max_col = columns;
+	max_rows = rows;
+	
+	//move_left
+	if(path_exists(maze, x1, y1, ))
+	
 }
 
-int does_path_exist(int *maze, int rows, int columns, int )
+int path_exist(int *maze, int )
